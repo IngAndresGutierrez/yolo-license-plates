@@ -1,0 +1,20 @@
+services:
+  trainer:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+
+    # The image ENTRYPOINT is the training CLI, so arguments go straight to it:
+    #   docker compose run --rm trainer --help
+    #   docker compose run --rm trainer --epochs 10
+
+    # PyTorch DataLoader workers share tensors through /dev/shm; Docker's 64MB
+    # default makes multi-worker training crash with "bus error"
+    shm_size: "2gb"
+
+    volumes:
+      - ./dataset:/app/dataset:ro
+      - ./configs:/app/configs:ro
+      - ./runs:/app/runs
+      - ./artifacts:/app/artifacts
+      - ./reports:/app/reports

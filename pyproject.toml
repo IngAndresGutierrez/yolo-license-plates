@@ -1,0 +1,49 @@
+[project]
+name = "yolo-license-plates"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "ing-andres-gutierrez",email = "g.gutierrez.j.andres@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "ultralytics (>=8.4.175,<9.0.0)",
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "pillow (>=12.3.0,<13.0.0)",
+    "pandas (>=3.0.6,<4.0.0)",
+    "matplotlib (>=3.11.2,<4.0.0)",
+    "torch (>=2.14.1,<3.0.0)",
+    "torchvision (>=0.29.1,<1.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "yolo_license_plates", from = "src"}]
+
+# CPU-only PyTorch wheels on Linux (the Docker image): the CUDA build from PyPI
+# adds ~7 GB of nvidia libraries that a container on macOS can't use anyway.
+# The CPU index has no macOS wheels, so other platforms keep using PyPI.
+[tool.poetry.dependencies]
+torch = [
+    {source = "pytorch-cpu", markers = "sys_platform == 'linux'"},
+    {version = "*", markers = "sys_platform != 'linux'"},
+]
+torchvision = [
+    {source = "pytorch-cpu", markers = "sys_platform == 'linux'"},
+    {version = "*", markers = "sys_platform != 'linux'"},
+]
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "ruff (>=0.17.0,<0.18.0)"
+]

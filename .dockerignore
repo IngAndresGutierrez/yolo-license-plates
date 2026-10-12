@@ -1,0 +1,37 @@
+# VCS / tooling
+.git/
+.gitignore
+.agents/
+.claude/
+.vscode/
+.idea/
+
+# Python artifacts
+**/__pycache__/
+**/*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+# Data and outputs: bind-mounted at runtime via compose.yaml, never baked in
+dataset/
+configs/
+runs/
+artifacts/
+reports/
+*.pt
+*.onnx
+
+# Not needed in the image
+tests/
+compose*.yaml
+skills-lock.json
+
+# Secrets
+**/.env
+**/.env.*
+**/*.pem
