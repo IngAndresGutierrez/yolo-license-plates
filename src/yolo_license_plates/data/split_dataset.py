@@ -3,10 +3,18 @@
 Writes dataset/images/{split}/ and, when --annotations is given, copies each
 image's original XML to dataset/annotations/{split}/ so the raw labels stay
 available for other formats or experiments.
+
+Byte-identical images are removed before splitting (unless --keep-duplicates):
+otherwise copies of the same photo land in different splits and val/test
+measure memorization. From each group the lowest-numbered file is kept, with
+its own annotation; dataset/duplicates.csv lists what was dropped.
 """
 
 import argparse
+import csv
+import hashlib
 import random
+import re
 import shutil
 from pathlib import Path
 
@@ -33,6 +41,26 @@ def split_names(
     }
 
 
+def natural_key(name: str) -> list:
+    """Sort "Cars9" before "Cars10"."""
+    return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", name)]
+
+
+def find_duplicates(paths: list[Path]) -> dict[Path, list[Path]]:
+    """Map the kept file of each group of byte-identical files to its dropped copies."""
+    groups: dict[str, list[Path]] = {}
+    for path in paths:
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        groups.setdefault(digest, []).append(path)
+
+    duplicates = {}
+    for group in groups.values():
+        if len(group) > 1:
+            kept, *dropped = sorted(group, key=lambda p: natural_key(p.name))
+            duplicates[kept] = dropped
+    return duplicates
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter
@@ -49,6 +77,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--ratios", type=float, nargs=3, default=(0.7, 0.2, 0.1), metavar=SPLITS
     )
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--keep-duplicates",
+        action="store_true",
+        help="Keep byte-identical copies (they may leak across splits)",
+    )
     return parser.parse_args(argv)
 
 
@@ -60,6 +93,14 @@ def main(argv: list[str] | None = None) -> None:
     ]
     if not images:
         raise SystemExit(f"No images found in {args.source}")
+
+    duplicates = (
+        {}
+        if args.keep_duplicates
+        else find_duplicates([args.source / n for n in images])
+    )
+    dropped = {p.name for copies in duplicates.values() for p in copies}
+    images = [n for n in images if n not in dropped]
 
     if args.annotations is not None:
         missing = [
@@ -73,7 +114,7 @@ def main(argv: list[str] | None = None) -> None:
                 f"e.g. {missing[0]}"
             )
 
-    for folder in ("images", "annotations"):
+    for folder in ("images", "annotations", "labels"):
         existing = [p for s in SPLITS for p in (args.output / folder / s).glob("*")]
         if existing:
             raise SystemExit(
@@ -96,6 +137,15 @@ def main(argv: list[str] | None = None) -> None:
                 shutil.copy2(args.annotations / xml_name, annotation_dir / xml_name)
 
         print(f"{split:>5}: {len(names)} images")
+
+    if duplicates:
+        with (args.output / "duplicates.csv").open("w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["kept", "dropped"])
+            for kept in sorted(duplicates, key=lambda p: natural_key(p.name)):
+                for copy in duplicates[kept]:
+                    writer.writerow([kept.name, copy.name])
+        print(f"Dropped {len(dropped)} duplicate images (see duplicates.csv)")
 
 
 if __name__ == "__main__":

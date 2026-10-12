@@ -1,5 +1,6 @@
-# YOLO detection dataset: license plates (dataset-matriculas, 433 images)
-# Split 70/20/10 with seed 42 by yolo_license_plates.data.split_dataset;
+# YOLO detection dataset: license plates (dataset-matriculas, 302 unique images
+# after dropping 131 byte-identical copies, see duplicates.csv).
+# Split 70/20/10 (211/60/31) with seed 42 by yolo_license_plates.data.split_dataset;
 # labels converted from annotations/ (Pascal VOC) by yolo_license_plates.data.voc_to_yolo.
 #
 # No `path` key: Ultralytics then uses this file's folder as the dataset root,
