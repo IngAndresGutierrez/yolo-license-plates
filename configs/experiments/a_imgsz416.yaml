@@ -1,0 +1,8 @@
+# Config A of the comparison: only imgsz differs from b_imgsz640.yaml
+name: a_imgsz416
+description: yolo26n from scratch, imgsz 416
+model: yolo26n.yaml
+epochs: 100
+imgsz: 416
+batch: 16
+patience: 30

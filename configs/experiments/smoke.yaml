@@ -1,0 +1,9 @@
+# Quick check that the pipeline works end to end: moderate resolution,
+# small batch, few epochs. Also measures seconds per epoch on this hardware.
+name: smoke
+description: Pipeline check (yolo26n from scratch, 3 epochs at 320)
+model: yolo26n.yaml
+epochs: 3
+imgsz: 320
+batch: 8
+patience: 0
