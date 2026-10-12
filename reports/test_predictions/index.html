@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Inferencia sobre test</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2rem; }
+figure { margin: 0 0 1.5rem; } img { max-width: 100%; border: 1px solid #ccc; }
+figcaption { color: #555; font-size: .9rem; }
+</style></head><body>
+<h1>Inferencia sobre test</h1>
+<p>Izquierda: imagen original. Derecha: predicción con confianza.
+Verde = acierto, rojo = falso positivo, amarillo = placa no detectada.</p>
+<h2>Correcta: todas las placas detectadas, sin falsos positivos (18)</h2>
+<figure><img src="gallery/correct/Cars100.jpg" loading="lazy"><figcaption>Cars100.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars113.jpg" loading="lazy"><figcaption>Cars113.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars117.jpg" loading="lazy"><figcaption>Cars117.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars118.jpg" loading="lazy"><figcaption>Cars118.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars15.jpg" loading="lazy"><figcaption>Cars15.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars165.jpg" loading="lazy"><figcaption>Cars165.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars18.jpg" loading="lazy"><figcaption>Cars18.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars192.jpg" loading="lazy"><figcaption>Cars192.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars226.jpg" loading="lazy"><figcaption>Cars226.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars243.jpg" loading="lazy"><figcaption>Cars243.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars309.jpg" loading="lazy"><figcaption>Cars309.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars373.jpg" loading="lazy"><figcaption>Cars373.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars375.jpg" loading="lazy"><figcaption>Cars375.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars394.jpg" loading="lazy"><figcaption>Cars394.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars51.jpg" loading="lazy"><figcaption>Cars51.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars79.jpg" loading="lazy"><figcaption>Cars79.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars88.jpg" loading="lazy"><figcaption>Cars88.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/correct/Cars9.jpg" loading="lazy"><figcaption>Cars9.png · 1 TP, 0 FP, 0 no detectadas</figcaption></figure>
+<h2>Con falsos positivos: detecta algo que no es una placa (8)</h2>
+<figure><img src="gallery/false_positive/Cars152.jpg" loading="lazy"><figcaption>Cars152.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars16.jpg" loading="lazy"><figcaption>Cars16.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars19.jpg" loading="lazy"><figcaption>Cars19.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars227.jpg" loading="lazy"><figcaption>Cars227.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars228.jpg" loading="lazy"><figcaption>Cars228.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars261.jpg" loading="lazy"><figcaption>Cars261.png · 1 TP, 2 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars263.jpg" loading="lazy"><figcaption>Cars263.png · 1 TP, 1 FP, 0 no detectadas</figcaption></figure>
+<figure><img src="gallery/false_positive/Cars311.jpg" loading="lazy"><figcaption>Cars311.png · 2 TP, 2 FP, 0 no detectadas</figcaption></figure>
+<h2>Con falsos positivos y placas no detectadas (2)</h2>
+<figure><img src="gallery/mixed/Cars215.jpg" loading="lazy"><figcaption>Cars215.png · 0 TP, 2 FP, 1 no detectadas</figcaption></figure>
+<figure><img src="gallery/mixed/Cars236.jpg" loading="lazy"><figcaption>Cars236.png · 0 TP, 1 FP, 1 no detectadas</figcaption></figure>
+<h2>Sin detecciones (3)</h2>
+<figure><img src="gallery/no_detections/Cars114.jpg" loading="lazy"><figcaption>Cars114.png · 0 TP, 0 FP, 1 no detectadas</figcaption></figure>
+<figure><img src="gallery/no_detections/Cars23.jpg" loading="lazy"><figcaption>Cars23.png · 0 TP, 0 FP, 1 no detectadas</figcaption></figure>
+<figure><img src="gallery/no_detections/Cars75.jpg" loading="lazy"><figcaption>Cars75.png · 0 TP, 0 FP, 1 no detectadas</figcaption></figure>
+</body></html>

@@ -1,0 +1,658 @@
+{
+  "weights": "models/yolo26n_b_imgsz640_best.pt",
+  "images": "dataset/images/test",
+  "imgsz": 640,
+  "conf": 0.25,
+  "iou": 0.5,
+  "images_results": [
+    {
+      "image": "Cars100.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            175.0,
+            117.6,
+            210.4,
+            129.4
+          ],
+          "conf": 0.4893,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars113.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            147.4,
+            104.2,
+            297.2,
+            196.2
+          ],
+          "conf": 0.6652,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars114.png",
+      "status": "no_detections",
+      "predictions": [],
+      "missed_ground_truth": [
+        [
+          7.0,
+          16.0,
+          493.0,
+          256.0
+        ]
+      ]
+    },
+    {
+      "image": "Cars117.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            44.2,
+            125.4,
+            83.1,
+            138.2
+          ],
+          "conf": 0.6458,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars118.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            204.8,
+            161.2,
+            390.0,
+            213.3
+          ],
+          "conf": 0.7225,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars15.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            316.7,
+            147.5,
+            364.3,
+            168.9
+          ],
+          "conf": 0.4738,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars152.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            100.1,
+            255.3,
+            194.0,
+            284.6
+          ],
+          "conf": 0.6427,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            105.0,
+            258.1,
+            188.5,
+            280.9
+          ],
+          "conf": 0.2587,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars16.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            37.6,
+            152.1,
+            60.6,
+            159.6
+          ],
+          "conf": 0.4904,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            37.9,
+            176.1,
+            57.1,
+            185.8
+          ],
+          "conf": 0.2716,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars165.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            215.7,
+            219.5,
+            287.7,
+            243.5
+          ],
+          "conf": 0.6082,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars18.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            309.4,
+            283.7,
+            406.4,
+            309.2
+          ],
+          "conf": 0.5826,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars19.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            146.3,
+            28.1,
+            224.3,
+            49.7
+          ],
+          "conf": 0.5529,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            148.9,
+            188.9,
+            221.1,
+            229.6
+          ],
+          "conf": 0.2507,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars192.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            107.8,
+            149.9,
+            209.9,
+            174.3
+          ],
+          "conf": 0.6564,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars215.png",
+      "status": "mixed",
+      "predictions": [
+        {
+          "xyxy": [
+            22.9,
+            148.1,
+            79.5,
+            176.1
+          ],
+          "conf": 0.3649,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            10.7,
+            57.3,
+            87.5,
+            76.6
+          ],
+          "conf": 0.2804,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": [
+        [
+          92.0,
+          105.0,
+          162.0,
+          123.0
+        ]
+      ]
+    },
+    {
+      "image": "Cars226.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            252.6,
+            196.0,
+            313.6,
+            211.4
+          ],
+          "conf": 0.7172,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars227.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            115.6,
+            196.9,
+            154.1,
+            211.0
+          ],
+          "conf": 0.49,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            116.4,
+            198.6,
+            149.1,
+            210.1
+          ],
+          "conf": 0.3389,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars228.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            276.4,
+            113.0,
+            299.8,
+            127.9
+          ],
+          "conf": 0.4879,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            85.4,
+            126.3,
+            122.7,
+            143.2
+          ],
+          "conf": 0.3656,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars23.png",
+      "status": "no_detections",
+      "predictions": [],
+      "missed_ground_truth": [
+        [
+          143.0,
+          172.0,
+          213.0,
+          211.0
+        ]
+      ]
+    },
+    {
+      "image": "Cars236.png",
+      "status": "mixed",
+      "predictions": [
+        {
+          "xyxy": [
+            225.5,
+            108.1,
+            243.5,
+            115.9
+          ],
+          "conf": 0.479,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": [
+        [
+          223.0,
+          106.0,
+          250.0,
+          119.0
+        ]
+      ]
+    },
+    {
+      "image": "Cars243.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            158.2,
+            171.4,
+            478.2,
+            236.5
+          ],
+          "conf": 0.5991,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars261.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            42.3,
+            67.6,
+            480.0,
+            165.0
+          ],
+          "conf": 0.5066,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            0.0,
+            77.9,
+            288.4,
+            169.1
+          ],
+          "conf": 0.3219,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            0.0,
+            74.6,
+            359.2,
+            153.3
+          ],
+          "conf": 0.2863,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars263.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            125.8,
+            263.0,
+            235.7,
+            288.5
+          ],
+          "conf": 0.5356,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            146.4,
+            265.9,
+            232.3,
+            290.8
+          ],
+          "conf": 0.2856,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars309.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            164.3,
+            136.6,
+            268.0,
+            194.9
+          ],
+          "conf": 0.4313,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars311.png",
+      "status": "false_positive",
+      "predictions": [
+        {
+          "xyxy": [
+            68.3,
+            90.2,
+            89.8,
+            98.6
+          ],
+          "conf": 0.6415,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            67.7,
+            89.2,
+            91.0,
+            100.4
+          ],
+          "conf": 0.524,
+          "match": "fp"
+        },
+        {
+          "xyxy": [
+            296.2,
+            164.1,
+            348.9,
+            181.7
+          ],
+          "conf": 0.4856,
+          "match": "tp"
+        },
+        {
+          "xyxy": [
+            296.3,
+            161.6,
+            353.0,
+            185.1
+          ],
+          "conf": 0.292,
+          "match": "fp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars373.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            150.0,
+            127.2,
+            268.5,
+            157.8
+          ],
+          "conf": 0.3055,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars375.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            138.3,
+            110.9,
+            286.3,
+            146.8
+          ],
+          "conf": 0.619,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars394.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            295.7,
+            164.6,
+            402.5,
+            192.0
+          ],
+          "conf": 0.3825,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars51.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            262.6,
+            142.6,
+            318.6,
+            159.3
+          ],
+          "conf": 0.6674,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars75.png",
+      "status": "no_detections",
+      "predictions": [],
+      "missed_ground_truth": [
+        [
+          209.0,
+          196.0,
+          218.0,
+          201.0
+        ]
+      ]
+    },
+    {
+      "image": "Cars79.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            239.7,
+            364.4,
+            354.9,
+            419.6
+          ],
+          "conf": 0.7209,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars88.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            175.0,
+            147.7,
+            240.9,
+            170.7
+          ],
+          "conf": 0.5666,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    },
+    {
+      "image": "Cars9.png",
+      "status": "correct",
+      "predictions": [
+        {
+          "xyxy": [
+            165.8,
+            222.4,
+            275.1,
+            247.9
+          ],
+          "conf": 0.687,
+          "match": "tp"
+        }
+      ],
+      "missed_ground_truth": []
+    }
+  ]
+}
