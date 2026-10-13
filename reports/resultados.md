@@ -16,7 +16,7 @@ Las dos configuraciones solo difieren en `imgsz`. La elección se hace con el mA
 | Tiempo de entrenamiento | 22.9 min (13.7 s/época) | 51.7 min (31.0 s/época) |
 
 **Elegida: B (`imgsz` 640).**
-- **Por qué:** mejora el mAP50-95 en 4.3 puntos y el mAP50 en 4.7. El 31% de las placas ocupa menos del 1% de la imagen, así que la resolución importa.
+- **Por qué:** mejora el mAP50-95 en 4.3 puntos y el mAP50 en 4.7. El 38% de las placas de train ocupa menos del 1% de la imagen, así que la resolución importa.
 - **Costo:** cada época tarda 2.3 veces más, y el recall baja un poco (0.754 → 0.681).
 
 Ninguna configuración se detuvo antes por la paciencia (30 épocas). Las dos alcanzaron su mejor resultado cerca del final (épocas 89 y 93), cuando el learning rate ya es bajo. En B, la mejor época cae dentro de las últimas 10, en las que el mosaic está desactivado (`close_mosaic=10`).

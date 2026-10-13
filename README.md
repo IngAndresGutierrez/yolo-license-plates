@@ -2,6 +2,8 @@
 
 Detección de matrículas con YOLO entrenado **desde pesos aleatorios** en CPU.
 
+📄 **Informe con resultados y conclusiones: [`reports/informe.md`](reports/informe.md)**
+
 ## Modelo
 
 | | |
